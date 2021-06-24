@@ -4,12 +4,14 @@ import { FEATURED_API, SEARCH_API } from "../config";
 import Movies from "../components/Movie/movies";
 import MovieModal from "./MovieModal/singleMovie";
 import Nav from "./Nav/nav";
+import Spinner from "./Spinner/spinner";
 
 const App = () => {
   const [movies, setMovies] = useState([]);
   const [search, setSearch] = useState();
   const [selectedMovie, setSelectedMovie] = useState(null);
   const [showMovieInfo, setShowMovieInfo] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -27,9 +29,11 @@ const App = () => {
   }, []);
 
   const getMovies = (API) => {
+    setLoading(true);
     fetch(API)
       .then((res) => res.json())
       .then((data) => {
+        setLoading(false);
         console.log(data);
         setMovies(data.results);
       });
@@ -47,6 +51,7 @@ const App = () => {
           handleChange={handleChange}
           searchKey={search}
         />
+        {loading && <Spinner />}
         <div className="grid-container">
           {movies.length > 0 &&
             movies.map((movie) => (
