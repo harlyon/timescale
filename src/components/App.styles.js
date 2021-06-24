@@ -97,8 +97,6 @@ export const Styled = styled.div`
 
 export const StyledMovies = styled.div`
   .container {
-    width: 230px;
-    height: 350px;
     margin: auto auto;
 
     display: flex;
@@ -112,9 +110,10 @@ export const StyledMovies = styled.div`
     position: relative;
 
     & .movie-poster {
-      width: 230px;
-      height: 300px;
+      height: 100%;
+      width: 100%;
       border-radius: 10px 10px 0 0;
+      objectfit: fill;
     }
   }
 
