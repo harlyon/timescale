@@ -1,16 +1,9 @@
 import { useState, useEffect } from "react";
 import { Styled } from "./App.styles";
+import { FEATURED_API, SEARCH_API } from "../config";
 import Movies from "../components/Movie/movies";
 import MovieModal from "./MovieModal/singleMovie";
 import Nav from "./Nav/nav";
-
-const REACT_APP_API_DOMAIN = "https://api.themoviedb.org/3";
-
-const REACT_APP_MOVIE_DB_API_KEY = "";
-
-const FEATURED_API = `${REACT_APP_API_DOMAIN}/discover/movie?api_key=${REACT_APP_MOVIE_DB_API_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1`;
-
-const SEARCH_API = `${REACT_APP_API_DOMAIN}/search/movie?&api_key=${REACT_APP_MOVIE_DB_API_KEY}&query=`;
 
 const App = () => {
   const [movies, setMovies] = useState([]);
