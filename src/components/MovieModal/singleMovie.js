@@ -1,6 +1,6 @@
 import React from "react";
 import moment from "moment";
-import { Styled } from "./modal.styles";
+import { StyledMovieModal } from "../App.styles";
 
 const MovieModal = ({ movieInfo, showMovieInfo, handleModalClose }) => {
   if (!movieInfo) return null;
@@ -18,7 +18,7 @@ const MovieModal = ({ movieInfo, showMovieInfo, handleModalClose }) => {
     handleModalClose();
   };
   return (
-    <Styled isModalOpen={showMovieInfo}>
+    <StyledMovieModal isModalOpen={showMovieInfo}>
       <div id="movieInfo" className="modal-container">
         <div className="modal-content">
           <div className="modal-header">
@@ -44,7 +44,7 @@ const MovieModal = ({ movieInfo, showMovieInfo, handleModalClose }) => {
           </div>
         </div>
       </div>
-    </Styled>
+    </StyledMovieModal>
   );
 };
 

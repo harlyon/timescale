@@ -1,10 +1,10 @@
 import React from "react";
-import { Styled } from "./movie.styles";
+import { StyledMovies } from "../App.styles";
 const IMG_API = "https://image.tmdb.org/t/p/w1280";
 
 const Movies = ({ title, poster_path, overview, vote_average, id }) => {
   return (
-    <Styled>
+    <StyledMovies>
       <div className="container">
         <img
           src={
@@ -18,7 +18,7 @@ const Movies = ({ title, poster_path, overview, vote_average, id }) => {
         <div className={"movie-rating"}>{vote_average}</div>
         <div className="movie-title">{title}</div>
       </div>
-    </Styled>
+    </StyledMovies>
   );
 };
 

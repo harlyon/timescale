@@ -4,11 +4,13 @@ import Movies from "../components/Movie/movies";
 import MovieModal from "./MovieModal/singleMovie";
 import Nav from "./Nav/nav";
 
-const FEATURED_API =
-  "https://api.themoviedb.org/3/discover/movie?api_key=8bf8616c7e30502fecaf4a8bf076d8c7&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1";
+const REACT_APP_API_DOMAIN = "https://api.themoviedb.org/3";
 
-const SEARCH_API =
-  "https://api.themoviedb.org/3/search/movie?&api_key=8bf8616c7e30502fecaf4a8bf076d8c7&query=";
+const REACT_APP_MOVIE_DB_API_KEY = "";
+
+const FEATURED_API = `${REACT_APP_API_DOMAIN}/discover/movie?api_key=${REACT_APP_MOVIE_DB_API_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1`;
+
+const SEARCH_API = `${REACT_APP_API_DOMAIN}/search/movie?&api_key=${REACT_APP_MOVIE_DB_API_KEY}&query=`;
 
 const App = () => {
   const [movies, setMovies] = useState([]);
